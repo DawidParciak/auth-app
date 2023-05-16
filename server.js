@@ -36,14 +36,6 @@ app.use('/', (req, res) => {
   res.status(404).render('notFound');
 });
 
-app.get('/user/logged', (req, res) => {
-  if (req.user) {
-    res.render('logged', { req: req });
-  } else {
-    res.redirect('/user/no-permission');
-  }
-});
-
 app.listen('8000', () => {
   console.log('Server is running on port: 8000');
 });
